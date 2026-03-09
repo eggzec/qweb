@@ -1,0 +1,14 @@
+# Git
+.git
+
+# Python
+__pycache__/
+**/__pycache__/
+**/*.egg-info
+**/*.py[cod]
+.ruff_cache
+.venv
+
+# Environment files
+.env
+.env.*
