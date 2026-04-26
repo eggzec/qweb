@@ -1,0 +1,87 @@
+# QWEB Configuration File
+# Copy this file to your home directory as ~/.qweb.conf or set QWEB_CONFIG environment variable
+
+# Sun Grid Engine Settings
+[sge]
+# Path to SGE settings script - REQUIRED
+source_settings = source sge/default/common/settings.sh
+
+# SGE installation root
+sge_root = sge
+
+# SGE cell name
+sge_cell = default
+
+# Default queue
+default_queue =
+
+# Default parallel environment
+default_pe =
+
+# Job submission defaults
+[job_defaults]
+# Run in current working directory
+cwd = true
+
+# Merge stdout and stderr
+merge_output = false
+
+# Default output directory
+output_dir =
+
+# Default error directory
+error_dir =
+
+# Email notifications
+mail_options =
+
+# Web Server Settings
+[web]
+host = 0.0.0.0
+port = 8080
+debug = false
+
+# CORS settings
+cors_enabled = true
+cors_origins = *
+
+# Rate limiting (requests per period)
+rate_limit = 100
+rate_limit_period = 60
+
+# Authentication Settings
+[auth]
+secret_key =
+session_ttl = 3600
+jwt_algorithm = HS256
+
+# Directory Service Settings
+[directory]
+# Backend: ldap, ad, nis, sql, custom, none
+backend = none
+
+# LDAP/AD Settings (used when backend = ldap or ad)
+[ldap]
+uri =
+base_dn =
+bind_dn =
+bind_password =
+use_ssl = true
+use_tls = false
+validate_cert = true
+timeout = 30
+
+# NIS Settings (used when backend = nis)
+[nis]
+ypserver =
+domain =
+
+# SQL Settings (used when backend = sql)
+[sql]
+connection_string =
+user_table = users
+username_column = username
+password_column = password
+email_column =
+full_name_column =
+group_table =
